@@ -138,7 +138,6 @@ private:
     GLuint vaoCone, vboCone;
     int coneVertexCount;
 
-
     // Projection matrix for 3D rendering
     QMatrix4x4 projection;
 
@@ -149,6 +148,7 @@ private:
     float cameraDistance;    // Distance of the camera from the scene
     float cameraAzimuth;     // Azimuth angle of the camera
     float cameraElevation;   // Elevation angle of the camera
+
 };
 
 #endif // GLSCENE_H
