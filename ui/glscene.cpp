@@ -181,13 +181,62 @@ void GLScene::wheelEvent(QWheelEvent *event)
 
 void GLScene::setupShaders()
 {
-    if (!shaderProgram.addShaderFromSourceFile(QOpenGLShader::Vertex, "vertex.glsl"))
+    if (!shaderProgram.addShaderFromSourceFile(QOpenGLShader::Vertex, "C:\\Users\\Pranay Bhange\\Desktop\\STUDIO PROJECT\\Sketcher\\ui\\vertex.glsl"))
+    {
         qWarning("Failed to compile vertex shader.");
-    if (!shaderProgram.addShaderFromSourceFile(QOpenGLShader::Fragment, "fragment.glsl"))
+        qDebug() << shaderProgram.log();
+    }
+    if (!shaderProgram.addShaderFromSourceFile(QOpenGLShader::Fragment, "C:\\Users\\Pranay Bhange\\Desktop\\STUDIO PROJECT\\Sketcher\\ui\\fragment.glsl"))
+    {
         qWarning("Failed to compile fragment shader.");
+        qDebug() << shaderProgram.log();
+    }
     if (!shaderProgram.link())
+    {
         qWarning("Failed to link shader program.");
+        qDebug() << shaderProgram.log();
+    }
 }
+
+// void GLScene::setupShaders()
+// {
+//     const char* vertexShaderSource = R"(#version 330 core
+//     layout (location = 0) in vec3 aPos;
+
+//     uniform mat4 model;
+//     uniform mat4 view;
+//     uniform mat4 projection;
+
+//     void main() {
+//         gl_Position = projection * view * model * vec4(aPos, 1.0);
+//     })";
+
+//     const char* fragmentShaderSource = R"(#version 330 core
+//     out vec4 FragColor;
+
+//     void main() {
+//         FragColor = vec4(0.2, 0.7, 0.9, 1.0);
+//     })";
+
+//     if (!shaderProgram.addShaderFromSourceCode(QOpenGLShader::Vertex, vertexShaderSource))
+//     {
+//         qWarning("Failed to compile vertex shader.");
+//         qDebug() << shaderProgram.log();
+//     }
+
+//     if (!shaderProgram.addShaderFromSourceCode(QOpenGLShader::Fragment, fragmentShaderSource))
+//     {
+//         qWarning("Failed to compile fragment shader.");
+//         qDebug() << shaderProgram.log();
+//     }
+
+//     if (!shaderProgram.link())
+//     {
+//         qWarning("Failed to link shader program.");
+//         qDebug() << shaderProgram.log();
+//     }
+// }
+
 
 void GLScene::setupCubeGeometry()
 {
