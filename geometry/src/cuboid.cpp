@@ -1,5 +1,5 @@
 #include "geometry.h"
-
+#define M_PI 3.14159265358979323846
 Cuboid::Cuboid() : start(0, 0, 0), width(0), height(0), depth(0) {}
 
 Cuboid ::Cuboid(Point3D &start, double width, double height, double depth) : start(start), width(width), height(height), depth(depth) {}

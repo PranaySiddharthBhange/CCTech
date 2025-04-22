@@ -35,4 +35,4 @@ public:
     static std::string generateOutputFileName(const std::string &outputFolder, int id);
 };
 
-#endif // IMPORT_H
+#endif

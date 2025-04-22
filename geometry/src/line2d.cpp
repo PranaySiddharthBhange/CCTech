@@ -1,5 +1,5 @@
 #include "geometry.h"
-
+#define M_PI 3.14159265358979323846
 Line2D::Line2D() : start(Point2D(0, 0)), end(Point2D(0, 0)) {}
 
 Line2D::Line2D(Point2D start, Point2D end) : start(start), end(end) {}
