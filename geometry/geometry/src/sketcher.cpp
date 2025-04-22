@@ -311,7 +311,7 @@ void Sketcher::draw()
 
 void Sketcher::importSTL()
 {
-    std::string stlDirectory = "./geometry/assets/stl";
+    std::string stlDirectory = "../assets";
     std::string outputDirectory = "./geometry/data";
 
     // List available STL files
@@ -332,7 +332,7 @@ void Sketcher::importSTL()
 }
 void Sketcher::importOBJ()
 {
-    std::string stlDirectory = "./geometry/assets/obj";
+    std::string stlDirectory = "../assets";
     std::string outputDirectory = "./geometry/data";
 
     // List available STL files

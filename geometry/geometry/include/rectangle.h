@@ -1,27 +1,3 @@
-// #ifndef RECTANGLE_H
-// #define RECTANGLE_H
-
-// class Rectangle : public Shape
-// {
-// private:
-//     Point2D start;
-//     double width, height;
-
-// public:
-//     Rectangle();
-
-//     Rectangle(Point2D start, double width, double height);
-
-//     void save(const std::string &filename) override;
-//     void input() override;
-//     void draw() override;
-//     void translate(double dx, double dy, double dz = 0) override;
-//     void scale(double dx, double dy, double dz = 0) override;
-//     void rotate();
-//     void rotate(const std::string &filename) override;
-// };
-
-// #endif // RECTANGLE_H
 #ifndef RECTANGLE_H
 #define RECTANGLE_H
 
