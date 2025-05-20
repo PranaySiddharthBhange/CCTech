@@ -2,34 +2,40 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include "bezierwindow.h"
+
+class BezierWidget;
 
 class QComboBox;
 class QListWidget;
 class QDoubleSpinBox;
-class GLScene;
 
+class GLScene;
 class MainWindow : public QMainWindow
 {
     Q_OBJECT
 
 public:
-    explicit MainWindow(QWidget* parent = nullptr);
+    explicit MainWindow(QWidget *parent = nullptr);
 
 private slots:
     void onAddShape();
     void onShapeSelected(int row);
     void onTransformChanged();
     void onDeleteShape();
+    void onBezierButtonClicked();
 
 private:
-    GLScene* glScene;
+    GLScene *glScene;
 
-    QComboBox* shapeComboBox;
-    QListWidget* shapeListWidget;
+    QComboBox *shapeComboBox;
+    QListWidget *shapeListWidget;
 
-    QDoubleSpinBox* rotationXSpin, * rotationYSpin, * rotationZSpin;
-    QDoubleSpinBox* translateXSpin, * translateYSpin, * translateZSpin;
-    QDoubleSpinBox* scaleSpin;
+    QDoubleSpinBox *rotationXSpin, *rotationYSpin, *rotationZSpin;
+    QDoubleSpinBox *translateXSpin, *translateYSpin, *translateZSpin;
+    QDoubleSpinBox *scaleSpin;
+
+    BezierWidget *bezierWidget;
 };
 
 #endif

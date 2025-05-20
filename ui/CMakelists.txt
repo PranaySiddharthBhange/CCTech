@@ -15,7 +15,12 @@ qt_add_executable(Sketcher
     mainwindow.h
     glscene.h
     glscene.cpp
-
+    bezierwindow.h
+    bezierwindow.cpp
+    extrude.h
+    extrude.cpp
+    revolve.h
+    revolve.cpp
 )
 
 target_link_libraries(Sketcher
