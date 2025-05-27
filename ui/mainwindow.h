@@ -3,8 +3,10 @@
 
 #include <QMainWindow>
 #include "bezierwindow.h"
-
+#include "revolve.h"
 class BezierWidget;
+class RevolveWidget; 
+
 
 class QComboBox;
 class QListWidget;
@@ -24,6 +26,7 @@ private slots:
     void onTransformChanged();
     void onDeleteShape();
     void onBezierButtonClicked();
+    void onRevolveButtonClicked();
 
 private:
     GLScene *glScene;
@@ -36,6 +39,8 @@ private:
     QDoubleSpinBox *scaleSpin;
 
     BezierWidget *bezierWidget;
+    RevolveWidget *revolveWidget;
+
 };
 
 #endif

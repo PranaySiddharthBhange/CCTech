@@ -1,6 +1,8 @@
 #include "mainwindow.h"
 #include "glscene.h"
 #include "bezierwindow.h"
+
+#include "revolve.h"
 #include <QDockWidget>
 #include <QComboBox>
 #include <QListWidget>
@@ -34,10 +36,13 @@ MainWindow::MainWindow(QWidget *parent)
     controlLayout->addWidget(addShapeButton);
     connect(addShapeButton, &QPushButton::clicked, this, &MainWindow::onAddShape);
 
-
     QPushButton *Bezier = new QPushButton("Bezier", controlPanel);
     controlLayout->addWidget(Bezier);
     connect(Bezier, &QPushButton::clicked, this, &MainWindow::onBezierButtonClicked);
+
+    QPushButton *revolve = new QPushButton("Revolve", controlPanel);
+    controlLayout->addWidget(revolve);
+    connect(revolve, &QPushButton::clicked, this, &MainWindow::onRevolveButtonClicked);
 
     shapeListWidget = new QListWidget(controlPanel);
     controlLayout->addWidget(shapeListWidget);
@@ -181,13 +186,22 @@ void MainWindow::onDeleteShape()
     }
 }
 
-
 void MainWindow::onBezierButtonClicked()
 {
     bezierWidget = new BezierWidget(this);
     bezierWidget->setMinimumSize(400, 400);
-    QDockWidget* bezierDock = new QDockWidget("Bezier Curve", this);
+    QDockWidget *bezierDock = new QDockWidget("Bezier Curve", this);
     bezierDock->setWidget(bezierWidget);
     addDockWidget(Qt::BottomDockWidgetArea, bezierDock);
     bezierDock->setFloating(true);
+}
+
+void MainWindow::onRevolveButtonClicked()
+{
+    revolveWidget = new RevolveWidget(this);
+    revolveWidget->setMinimumSize(400, 400);
+    QDockWidget *revolveDock = new QDockWidget("Revolve", this);
+    revolveDock->setWidget(revolveWidget);
+    addDockWidget(Qt::BottomDockWidgetArea, revolveDock);
+    revolveDock->setFloating(true);
 }
